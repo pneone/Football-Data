@@ -1,0 +1,196 @@
+$color-main: #006400;
+$color-sub: #579157;
+$color-text: #000;
+$color-form-bg: #fff;
+$color-accent: #FFD700;
+$color-body: #cfd5cf;
+
+body {
+  background-color: $color-body;
+  color: $color-text;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.sfd-form-container,
+.sfd-results {
+  background-color: $color-form-bg;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 510px) {
+    padding: .8rem;
+
+  }
+}
+
+.sfd-form-container * {
+  transition: all 0.2s ease-in-out;
+}
+
+.sfd-form-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-main;
+}
+
+.sfd-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .form-field {
+    flex: 1 1 200px;
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    select,
+    input,
+    .sfd-submit-button {
+      width: 100%;
+      padding: 0.5rem 0.8rem;
+      font-size: 1rem;
+      border: 1px solid $color-accent;
+      border-radius: 0.5rem;
+      outline: none;
+      background-color: #fff;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    &:last-child {
+      display: flex;
+      align-items: flex-end;
+
+      .sfd-submit-button {
+        background-color: $color-accent;
+        color: #000;
+        font-weight: 600;
+        min-width: 3rem;
+
+        &:hover {
+          background-color: rgba($color-accent, 0.4);
+        }
+      }
+    }
+  }
+}
+
+.sfd-results {
+  margin-top: 1rem;
+
+  .sfd-loading {
+    display: none;
+    text-align: center;
+
+    > * {
+      margin-top: 0;
+    }
+  }
+
+  .football-container {
+
+    @media (max-width: 375px) {
+      overflow-x: scroll;
+    }
+    > h3 {
+      margin: 0;
+      padding: 1rem 0;
+      border-bottom: 1px solid $color-accent;
+      font-size: 1.5rem;
+    }
+
+    .football-table {
+      width: 100%;
+      margin-top: 1rem;
+      border-collapse: collapse;
+      color: $color-text;
+
+      thead th {
+        text-align: center;
+        text-transform: uppercase;
+        background-color: $color-accent;
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+
+        &:first-child {
+          border-top-left-radius: 0.5rem;
+        }
+
+        &:last-child {
+          border-top-right-radius: 0.5rem;
+        }
+
+        @media (max-width: 510px) {
+          font-size: .8rem;
+          padding: .5rem 0.3rem;
+        }
+      }
+
+      tbody tr td {
+        padding: 0.8rem;
+        text-align: center;
+        border-bottom: 1px solid $color-accent;
+
+        @media (max-width: 510px) {
+          font-size: 1rem;
+          padding: 0.3rem;
+        }
+
+        &.score{
+          text-wrap: nowrap;
+        }
+
+        .teams-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+
+          @media (max-width: 1124px) {
+            flex-direction: column;
+            gap: 0;
+          }
+
+          .team-divider {
+            font-weight: 700;
+          }
+        }
+
+        .team {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+
+          img {
+            height: 2rem;
+            max-width: 2rem;
+            width: auto;
+            object-fit: contain;
+
+            @media (max-width: 840px) {
+              display: none;
+            }
+
+            @media (max-width: 580px) {
+              display: initial;
+            }
+          }
+
+          @media (max-width: 580px) {
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

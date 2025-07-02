@@ -1,0 +1,174 @@
+body {
+  background-color: #cfd5cf;
+  color: #000;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.sfd-form-container,
+.sfd-results {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 510px) {
+  .sfd-form-container,
+  .sfd-results {
+    padding: 0.8rem;
+  }
+}
+
+.sfd-form-container * {
+  transition: all 0.2s ease-in-out;
+}
+
+.sfd-form-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #006400;
+}
+
+.sfd-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.sfd-form .form-field {
+  flex: 1 1 200px;
+}
+.sfd-form .form-field label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+.sfd-form .form-field select,
+.sfd-form .form-field input,
+.sfd-form .form-field .sfd-submit-button {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #FFD700;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.sfd-form .form-field:last-child {
+  display: flex;
+  align-items: flex-end;
+}
+.sfd-form .form-field:last-child .sfd-submit-button {
+  background-color: #FFD700;
+  color: #000;
+  font-weight: 600;
+  min-width: 3rem;
+}
+.sfd-form .form-field:last-child .sfd-submit-button:hover {
+  background-color: rgba(255, 215, 0, 0.4);
+}
+
+.sfd-results {
+  margin-top: 1rem;
+}
+.sfd-results .sfd-loading {
+  display: none;
+  text-align: center;
+}
+.sfd-results .sfd-loading > * {
+  margin-top: 0;
+}
+@media (max-width: 375px) {
+  .sfd-results .football-container {
+    overflow-x: scroll;
+  }
+}
+.sfd-results .football-container > h3 {
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid #FFD700;
+  font-size: 1.5rem;
+}
+.sfd-results .football-container .football-table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  color: #000;
+}
+.sfd-results .football-container .football-table thead th {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #FFD700;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+}
+.sfd-results .football-container .football-table thead th:first-child {
+  border-top-left-radius: 0.5rem;
+}
+.sfd-results .football-container .football-table thead th:last-child {
+  border-top-right-radius: 0.5rem;
+}
+@media (max-width: 510px) {
+  .sfd-results .football-container .football-table thead th {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+  }
+}
+.sfd-results .football-container .football-table tbody tr td {
+  padding: 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid #FFD700;
+}
+@media (max-width: 510px) {
+  .sfd-results .football-container .football-table tbody tr td {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+}
+.sfd-results .football-container .football-table tbody tr td.score {
+  text-wrap: nowrap;
+}
+.sfd-results .football-container .football-table tbody tr td .teams-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 1124px) {
+  .sfd-results .football-container .football-table tbody tr td .teams-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.sfd-results .football-container .football-table tbody tr td .teams-wrapper .team-divider {
+  font-weight: 700;
+}
+.sfd-results .football-container .football-table tbody tr td .team {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.sfd-results .football-container .football-table tbody tr td .team img {
+  height: 2rem;
+  max-width: 2rem;
+  width: auto;
+  object-fit: contain;
+}
+@media (max-width: 840px) {
+  .sfd-results .football-container .football-table tbody tr td .team img {
+    display: none;
+  }
+}
+@media (max-width: 580px) {
+  .sfd-results .football-container .football-table tbody tr td .team img {
+    display: initial;
+  }
+}
+@media (max-width: 580px) {
+  .sfd-results .football-container .football-table tbody tr td .team span {
+    display: none;
+  }
+}
